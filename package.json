@@ -2,13 +2,14 @@
   "name": "rxp-hello-world",
   "version": "1.0.0",
   "private": true,
-  "main": "index.js",
+  "main": "index.electron.js",
   "scripts": {
     "web-watch": "cross-env NODE_ENV=development webpack --progress --colors --watch",
     "rn-watch": "tsc --watch",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
-    "ios": "node node_modules/react-native/local-cli/cli.js run-ios"
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "electron": "electron ."
   },
   "devDependencies": {
     "@types/node": "^7.0.12",
@@ -18,6 +19,7 @@
     "babel-loader": "^7.1.1",
     "babel-preset-react-app": "^3.0.1",
     "cross-env": "^5.0.2",
+    "electron": "^1.6.11",
     "source-map-loader": "^0.1.6",
     "ts-node": "^3.2.1",
     "typescript": "2.4.1",

@@ -26,7 +26,6 @@ The commands in the instructions below assume you are in the root of this repo.
 
 - Support `.js`, `.jsx` modules via babel-preset-react-app.
 
-
 ```
 // ./JsComponent.js
 
@@ -44,4 +43,14 @@ import JsC = require('./JsComponent');
 const JsComponent = JsC.default as any
 
 export = () => <RX.View><JsComponent>Foo</JsComponent></RX.View>
+```
+
+- Support Electron
+
+```
+# generate the js bundle
+yarn web-watch
+
+# on other terminal
+yarn electron 
 ```
