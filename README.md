@@ -22,7 +22,7 @@ The commands in the instructions below assume you are in the root of this repo.
 
 ## Changelog 
 
-> based on code generated from reacte-xp-app
+> based on code generated from [react-xp-app](https://github.com/react-native-training/create-xp-app)
 
 - Support `.js`, `.jsx` modules via babel-preset-react-app.
 
@@ -55,6 +55,9 @@ yarn web-watch
 yarn electron 
 ```
 
-- Supports HMR
+- Support HMR
 
-`yarn web`
+```
+# local server hosting
+yarn web
+```
