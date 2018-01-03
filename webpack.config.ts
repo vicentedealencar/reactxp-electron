@@ -1,27 +1,35 @@
-import * as webpack from 'webpack';
+import * as webpack from 'webpack'
 
 const config: webpack.Configuration = {
-    entry: "./src/index.tsx",
-    output: {
-        filename: "bundle.js",
-        path: __dirname + "/dist"
-    },
+  entry: ['react-hot-loader/patch', './src/index.tsx'],
+  output: {
+    filename: 'bundle.js',
+    path: __dirname + '/dist',
+    publicPath: '/dist'
+  },
 
-    // Enable sourcemaps for debugging webpack's output.
-    devtool: "source-map",
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: 'source-map',
 
-    resolve: {
-        // Add '.ts' and '.tsx' as resolvable extensions.
-        extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".jsx"]
-    },
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.jsx']
+  },
 
-    module: {
-        loaders: [
-            { test: /\.(js|jsx)$/, loader: "babel-loader", query: { "presets": ["react-app"] } },
-            // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
-            { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-        ]
-    },
-};
+  module: {
+    loaders: [
+      {
+        test: /\.(js|jsx)$/,
+        loaders: ['react-hot-loader/webpack', 'babel-loader?presets[]=react-app'],
+        //query: { presets: ['react-app'] }
+      },
+      // All files with a '.ts' or '.tsx' extension will be handled by 'awesome-typescript-loader'.
+      {
+        test: /\.tsx?$/,
+        loaders: ['react-hot-loader/webpack', 'awesome-typescript-loader']
+      }
+    ]
+  }
+}
 
-export default config;
+export default config

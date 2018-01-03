@@ -54,3 +54,7 @@ yarn web-watch
 # on other terminal
 yarn electron 
 ```
+
+- Supports HMR
+
+`yarn web`
